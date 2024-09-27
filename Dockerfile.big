@@ -1,0 +1,10 @@
+FROM golang:1.23
+
+WORKDIR /app
+COPY . .
+RUN GOOS=linux go build -o server ./main.go
+
+CMD [ "./server" ]
+
+
+

@@ -1,0 +1,10 @@
+FROM golang:1.23-alpine
+
+WORKDIR /app
+COPY . .
+RUN GOOS=linux go build -ldflags="-s -w" -o server ./main.go
+
+CMD [ "./server" ]
+
+
+
